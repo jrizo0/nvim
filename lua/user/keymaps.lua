@@ -38,8 +38,8 @@ keymap("n", "<leader>O", "O<Esc>", opts)
 -- INDENT
 keymap("n", "<Tab>", ">>", opts)
 keymap("n", "<S-Tab>", "<<", opts)
-keymap("i", "<S-Tab>", "<Esc><<i", opts)
-keymap("i", "<Tab>", "<Esc>>>i", opts)
+-- keymap("i", "<S-Tab>", "<Esc><<i", opts)
+-- keymap("i", "<Tab>", "<Esc>>>i", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
 keymap("v", "<Tab>", ">gv", opts)
 -- TABS NAV

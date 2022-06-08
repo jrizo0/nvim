@@ -48,6 +48,7 @@ local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
     local status_ok, illuminate = pcall(require, "illuminate")
     if not status_ok then
+      vim.notify("Error in lsp_highlight_document")
       return
     end
     illuminate.on_attach(client)
@@ -60,7 +61,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<A-CR>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
@@ -74,7 +75,7 @@ local function lsp_keymaps(bufnr)
   opts
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
@@ -92,6 +93,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
+  vim.notify("Error in pcall to cmp_nvim_lsp")
   return
 end
 

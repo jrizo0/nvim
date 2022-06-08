@@ -87,7 +87,7 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -183,5 +183,20 @@ local mappings = {
   },
 }
 
+local vopts = {
+  mode = "v", -- VISUAL mode
+  prefix = "<leader>",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+local vmappings = {
+  ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+  -- s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
+}
+
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
+which_key.register(vmappings, vopts)
