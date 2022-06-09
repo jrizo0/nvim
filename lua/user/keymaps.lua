@@ -32,9 +32,10 @@ keymap("n", "<leader>y", '"+y', opts)
 keymap("v", "<leader>y", '"+y', opts)
 keymap("i", "<leader>y", '"+y', opts)
 keymap("v", "<leader>Y", 'gg"+yG', opts)
-keymap("i", "<C-BS>", "<C-W>", opts)
+keymap("i", "<C-BS>", "<C-W>", opts) -- not working
 keymap("n", "<leader>o", "o<Esc>", opts)
 keymap("n", "<leader>O", "O<Esc>", opts)
+
 -- INDENT
 keymap("n", "<Tab>", ">>", opts)
 keymap("n", "<S-Tab>", "<<", opts)
@@ -54,6 +55,7 @@ keymap("n", "tn", ":tabnew<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprev<CR>", opts)
 keymap("n", "<A-->", "<cmd>Bdelete!<CR>", opts)
+--  TELESCOPE
 keymap(
   "n",
   "<C-p>",

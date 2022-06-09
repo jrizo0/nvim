@@ -28,7 +28,7 @@ local schemas = {
     url = "https://json.schemastore.org/babelrc.json",
   },
   {
-    description = "ESLint config",
+    description = "eslint config",
     fileMatch = {
       ".eslintrc.json",
       ".eslintrc",
