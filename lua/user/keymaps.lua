@@ -30,9 +30,8 @@ keymap("n", "<leader>cp", '"+p', opts)
 keymap("v", "<leader>cp", '"+p', opts)
 keymap("n", "<leader>y", '"+y', opts)
 keymap("v", "<leader>y", '"+y', opts)
-keymap("i", "<leader>y", '"+y', opts)
 keymap("v", "<leader>Y", 'gg"+yG', opts)
-keymap("i", "<C-BS>", "<C-W>", opts) -- not working
+-- keymap("i", "<C-BS>", "<C-W>", opts) -- not working
 keymap("n", "<leader>o", "o<Esc>", opts)
 keymap("n", "<leader>O", "O<Esc>", opts)
 
