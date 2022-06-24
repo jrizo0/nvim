@@ -11,6 +11,7 @@ configs.setup {
     "html",
     "css",
     "c",
+    "cpp",
     "java",
     "lua",
     "json",

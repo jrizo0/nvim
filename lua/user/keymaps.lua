@@ -21,10 +21,9 @@ vim.g.maplocalleader = " "
 ---------------------------------------------------------------------
 -- JRIZO ------------------------------------------------------------
 ---------------------------------------------------------------------
+-- CLIPBOARD
 keymap("n", "<leader>pv", ":Sex!<CR>", opts)
 keymap("n", "<leader>pv", ":Sex!<CR>", opts)
--- keymap("v", "K", ":m '<-2'<CR>v", opts)
--- keymap("v", "j", ":m '>+1'<CR>gv=gv", opts)
 keymap("v", "<leader>p", '"_dP', opts)
 keymap("n", "<leader>cp", '"+p', opts)
 keymap("v", "<leader>cp", '"+p', opts)
@@ -38,22 +37,20 @@ keymap("n", "<leader>O", "O<Esc>", opts)
 -- INDENT
 keymap("n", "<Tab>", ">>", opts)
 keymap("n", "<S-Tab>", "<<", opts)
--- keymap("i", "<S-Tab>", "<Esc><<i", opts)
--- keymap("i", "<Tab>", "<Esc>>>i", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
 keymap("v", "<Tab>", ">gv", opts)
+
 -- TABS NAV
 keymap("n", "th", ":tabnext<CR>", opts)
 keymap("n", "tl", ":tabprev<CR>", opts)
 keymap("n", "td", ":tabclose<CR>", opts)
 keymap("n", "tn", ":tabnew<CR>", opts)
--- NVIM TREE
--- keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
--- keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
--- BUFFERLINE TODO:
+-- BUFFERLINE:
+
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprev<CR>", opts)
 keymap("n", "<A-->", "<cmd>Bdelete!<CR>", opts)
+
 --  TELESCOPE
 keymap(
   "n",
@@ -63,10 +60,7 @@ keymap(
   opts
 )
 
-
-
-
-
+----------------------------------------------------------------------------
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

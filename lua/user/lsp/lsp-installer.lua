@@ -9,7 +9,7 @@ local servers = {
   "emmet_ls",
   "html",
   "jsonls",
-  "solc",
+  -- "solc",
   "sumneko_lua",
   "tflint",
   "tsserver",

@@ -7,8 +7,20 @@
 -- endtry
 -- ]]
 
-local colorscheme = "gruvbox"
--- local colorscheme = "tokyonight"
+-- NEON CONFIG
+-- vim.g.neon_style = 'dark'
+-- EDGE CONFIG
+-- vim.g.edge_style = 'aura'
+-- GRUVBOX_MATERIAL CONFIG
+vim.g.gruvbox_material_foreground = 'mix'
+vim.g.gruvbox_material_better_performance = 1
+vim.g.gruvbox_material_enable_bold = 1
+vim.g.gruvbox_material_enable_italic = 1
+vim.g.gruvbox_material_transparent_background = 0
+vim.g.gruvbox_material_visual = 'blue background'
+
+-- local colorscheme = "edge"
+local colorscheme = "gruvbox-material"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -16,13 +28,13 @@ if not status_ok then
   return
 end
 
-vim.g.gruvbox_italic_keyword = true
-vim.g.gruvbox_italic_function = true
+
+
 
 
 require("lsp-colors").setup({
- Error = "#db4b4b",
- Warning = "#e0af68",
- Information = "#0db9d7",
- Hint = "#10B981"
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
 })
