@@ -35,8 +35,8 @@ keymap("n", "<leader>o", "o<Esc>", opts)
 keymap("n", "<leader>O", "O<Esc>", opts)
 
 -- INDENT
-keymap("n", "<Tab>", ">>", opts)
-keymap("n", "<S-Tab>", "<<", opts)
+--[[ keymap("n", "<Tab>", ">>", opts) ]]
+--[[ keymap("n", "<S-Tab>", "<<", opts) ]]
 keymap("v", "<S-Tab>", "<gv", opts)
 keymap("v", "<Tab>", ">gv", opts)
 
