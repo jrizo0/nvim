@@ -62,6 +62,10 @@ keymap(
 
 ----------------------------------------------------------------------------
 -- Normal --
+-- Center screen
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
