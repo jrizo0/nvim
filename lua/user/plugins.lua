@@ -65,13 +65,16 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   -- use "morhetz/gruvbox"
 
-  -- use "ellisonleao/gruvbox.nvim"
   use "sainnhe/edge"
   use "sainnhe/gruvbox-material"
   use "rafamadriz/neon"
   use "folke/lsp-colors.nvim"
   use "NTBBloodbath/doom-one.nvim"
   use "folke/tokyonight.nvim"
+
+  use "B4mbus/oxocarbon-lua.nvim"
+      use 'rktjmp/lush.nvim'
+  use 'nocksock/bloop.nvim'
 
 
   -- cmp plugins
