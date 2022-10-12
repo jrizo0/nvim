@@ -97,6 +97,8 @@ return packer.startup(function(use)
   -- use "ray-x/lsp_signature.nvim"
   use "RRethy/vim-illuminate"
 
+  use "folke/trouble.nvim"
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"

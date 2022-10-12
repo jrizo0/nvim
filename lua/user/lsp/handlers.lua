@@ -10,12 +10,12 @@ M.setup = function()
   }
 
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
   end
 
   local config = {
     -- disable virtual text
-    virtual_text = false,
+    virtual_text = { prefix = "" },
     -- show signs
     signs = {
       active = signs,

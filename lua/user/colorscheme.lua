@@ -25,7 +25,7 @@ vim.g.gruvbox_material_current_word = 'grey background'
 vim.g.gruvbox_material_menu_selection_background = 'aqua'
 vim.g.gruvbox_material_ui_contrast = 'high'
 vim.g.gruvbox_material_diagnostic_text_highlight = '1'
-vim.g.gruvbox_material_diagnostic_virtual_text = 'grey'
+vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 
 -- local colorscheme = "edge"
 local colorscheme = "gruvbox-material"
