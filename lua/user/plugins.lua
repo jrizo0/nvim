@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   -- use "morhetz/gruvbox"
 
+  use "ellisonleao/gruvbox.nvim"
   use "sainnhe/edge"
   use "sainnhe/gruvbox-material"
   use "rafamadriz/neon"
@@ -94,8 +95,15 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "ray-x/lsp_signature.nvim"
+  use "ray-x/lsp_signature.nvim"
   use "RRethy/vim-illuminate"
+  use "j-hui/fidget.nvim"
+  use "lvimuser/lsp-inlayhints.nvim"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  -- use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- 
+  use "SmiteshP/nvim-navic"
+
 
   use "folke/trouble.nvim"
 
