@@ -1,26 +1,3 @@
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "S",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "",
-    untracked = "U",
-    ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
-}
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -46,6 +23,31 @@ nvim_tree.setup {
   -- config = {
   --   nvim_tree_callback = tree_cb,
   -- },
+  renderer = {
+    icons = {
+      glyphs = {
+        default = "",
+        symlink = "",
+        git = {
+          unstaged = "",
+          staged = "S",
+          unmerged = "",
+          renamed = "➜",
+          deleted = "",
+          untracked = "U",
+          ignored = "◌",
+        },
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+        },
+      }
+    },
+    highlight_opened_files = "all",
+  },
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = true,
@@ -87,7 +89,7 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
+    -- height = 30,
     hide_root_folder = false,
     side = "left",
     mappings = {

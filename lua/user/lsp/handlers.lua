@@ -7,7 +7,8 @@ local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 --   return
 -- end
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+-- M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities) -- deprecated
+M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
   local icons = require "user.icons"
