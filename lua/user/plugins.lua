@@ -102,7 +102,17 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   -- use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- 
+  use "simrat39/symbols-outline.nvim"
   use "SmiteshP/nvim-navic"
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   event = { "VimEnter" },
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require "user.copilot"
+  --     end, 100)
+  --   end,
+  -- }
 
 
   use "folke/trouble.nvim"
@@ -128,7 +138,6 @@ return packer.startup(function(use)
   --[[ use "github/copilot.vim" ]]
 
   use "ThePrimeagen/vim-be-good"
-  use "preservim/tagbar"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
