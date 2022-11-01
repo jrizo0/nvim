@@ -31,6 +31,12 @@ vim.g.gruvbox_material_diagnostic_text_highlight = 0
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 vim.g.gruvbox_material_diagnostic_line_highlight = 0 -- not working
 
+-- TOKYONIGHT CONFIG
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_transparent_sidebar = true
+
 -- GRUVBOX CONFIG
 require("gruvbox").setup({
   undercurl = true,
@@ -51,8 +57,9 @@ require("gruvbox").setup({
 })
 
 -- local colorscheme = "edge"
-local colorscheme = "gruvbox-material"
+-- local colorscheme = "gruvbox-material"
 -- local colorscheme = "gruvbox"
+local colorscheme = "tokyonight"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
