@@ -5,6 +5,7 @@ end
 
 local icons = require "user.icons"
 local opts = {
+	autofold_depth = 2,
 	highlight_hovered_item = true,
 	show_guides = true,
 	auto_preview = false,
@@ -12,7 +13,7 @@ local opts = {
 	width = 20,
 	show_numbers = false,
 	show_relative_numbers = false,
-	show_symbol_details = true,
+	show_symbol_details = false,
 	keymaps = { -- These keymaps can be a string or a table for multiple keys
 		close = { "<Esc>", "q" },
 		goto_location = "<Cr>",
