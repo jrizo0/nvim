@@ -59,24 +59,34 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "folke/todo-comments.nvim"
+  use "ThePrimeagen/vim-be-good"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
-  -- use "morhetz/gruvbox"
-
-  use "ellisonleao/gruvbox.nvim"
-  use "sainnhe/edge"
   use "sainnhe/gruvbox-material"
-  use "rafamadriz/neon"
   use "folke/lsp-colors.nvim"
-  use "NTBBloodbath/doom-one.nvim"
   use "folke/tokyonight.nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  -- use "lunarvim/darkplus.nvim"
+  -- use "morhetz/gruvbox"
+  -- use "ellisonleao/gruvbox.nvim"
+  -- use "sainnhe/edge"
+  -- use "rafamadriz/neon"
+  -- use "NTBBloodbath/doom-one.nvim"
 
-  use "B4mbus/oxocarbon-lua.nvim"
-      use 'rktjmp/lush.nvim'
-  use 'nocksock/bloop.nvim'
-
+  -- Debugging
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+  use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+  }
+  use 'mfussenegger/nvim-dap-python'
+  -- use "theHamsta/nvim-dap-virtual-text"
+  -- use "Pocco81/DAPInstall.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -101,19 +111,9 @@ return packer.startup(function(use)
   use "lvimuser/lsp-inlayhints.nvim"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-  -- use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- 
+  -- use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" --
   use "simrat39/symbols-outline.nvim"
   use "SmiteshP/nvim-navic"
-  -- use {
-  --   "zbirenbaum/copilot.lua",
-  --   event = { "VimEnter" },
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require "user.copilot"
-  --     end, 100)
-  --   end,
-  -- }
-
 
   use "folke/trouble.nvim"
 
@@ -137,7 +137,6 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   --[[ use "github/copilot.vim" ]]
 
-  use "ThePrimeagen/vim-be-good"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

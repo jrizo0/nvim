@@ -15,7 +15,7 @@ local servers = {
   "html",
   "jsonls",
   -- "solc",
-  "sumneko_lua",
+  "lua_ls",
   "tflint",
   "tsserver",
   "pyright",

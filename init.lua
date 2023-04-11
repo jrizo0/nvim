@@ -28,3 +28,9 @@ require "user.todo-comments"
 require "user.trouble"
 require "user.fidget"
 require "user.symbol-outline"
+require "user.dap"
+
+-- TODO:
+-- lazyvim
+-- tree
+-- notifications

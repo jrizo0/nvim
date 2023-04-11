@@ -8,65 +8,137 @@ if not config_status_ok then
   return
 end
 
--- Replaces auto_close
+local icons = require "user.icons"
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
--- vim.api.nvim_create_autocmd("BufEnter", {
---   nested = true,
---   callback = function()
---     if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
---       vim.cmd "quit"
---     end
---   end
--- })
+
+local utils = require "nvim-tree.utils"
+
+---@diagnostic disable-next-line: unused-local
+local function notify_level(level)
+  return function(msg)
+    vim.schedule(function()
+      vim.api.nvim_echo({ { msg, "WarningMsg" } }, false, {})
+    end)
+  end
+end
+local function open_nvim_tree(data)
+  -- buffer is a [No Name]
+  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+  if not no_name and not directory then
+    return
+  end
+  -- change to the directory
+  if directory then
+    vim.cmd.cd(data.file)
+  end
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+-- utils.notify.warn = notify_level(vim.log.levels.WARN)
+-- utils.notify.error = notify_level(vim.log.levels.ERROR)
+-- utils.notify.info = notify_level(vim.log.levels.INFO)
+-- utils.notify.debug = notify_level(vim.log.levels.DEBUG)
 
 nvim_tree.setup {
-  -- config = {
-  --   nvim_tree_callback = tree_cb,
+  -- actions = {
+  --   change_dir = {
+  --     enable = true,
+  --     global = true,
+  --     restrict_above_cws = false,
+  --   },
   -- },
+  hijack_directories = {
+    enable = false,
+  },
+  -- update_to_buf_dir = {
+  --   enable = false,
+  -- },
+  -- disable_netrw = true,
+  -- hijack_netrw = true,
+  -- open_on_setup = true,
+  -- ignore_ft_on_setup = {
+  --   "startify",
+  --   "dashboard",
+  --   "alpha",
+  -- },
+  filters = {
+    custom = { ".git" },
+    exclude = { ".gitignore" },
+  },
+  -- auto_close = true,
+  -- open_on_tab = false,
+  -- hijack_cursor = false,
+  update_cwd = true,
+  -- update_to_buf_dir = {
+  --   enable = true,
+  --   auto_open = true,
+  -- },
+  -- --   error
+  -- --   info
+  -- --   question
+  -- --   warning
+  -- --   lightbulb
   renderer = {
+    add_trailing = false,
+    group_empty = false,
+    highlight_git = false,
+    highlight_opened_files = "none",
+    root_folder_modifier = ":t",
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
     icons = {
+      webdev_colors = true,
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
       glyphs = {
-        default = "",
+        default = "",
         symlink = "",
-        git = {
-          unstaged = "",
-          staged = "S",
-          unmerged = "",
-          renamed = "➜",
-          deleted = "",
-          untracked = "U",
-          ignored = "◌",
-        },
         folder = {
+          arrow_open = icons.ui.ArrowOpen,
+          arrow_closed = icons.ui.ArrowClosed,
           default = "",
           open = "",
           empty = "",
           empty_open = "",
           symlink = "",
+          symlink_open = "",
         },
-      }
+        git = {
+          unstaged = "",
+          staged = "S",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "U",
+          deleted = "",
+          ignored = "◌",
+        },
+      },
     },
-    highlight_opened_files = "all",
   },
-  disable_netrw = true,
-  hijack_netrw = true,
-  open_on_setup = true,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
-  -- auto_close = true,
-  open_on_tab = false,
-  hijack_cursor = false,
-  update_cwd = true,
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = icons.diagnostics.Hint,
+      info = icons.diagnostics.Information,
+      warning = icons.diagnostics.Warning,
+      error = icons.diagnostics.Error,
     },
   },
   update_focused_file = {
@@ -74,14 +146,14 @@ nvim_tree.setup {
     update_cwd = true,
     ignore_list = {},
   },
-  system_open = {
-    cmd = nil,
-    args = {},
-  },
-    filters = {
-    dotfiles = false,
-    custom = {},
-  },
+  -- system_open = {
+  --   cmd = nil,
+  --   args = {},
+  -- },
+  -- filters = {
+  --   dotfiles = false,
+  --   custom = {},
+  -- },
   git = {
     enable = true,
     ignore = true,
@@ -92,43 +164,16 @@ nvim_tree.setup {
     -- height = 30,
     hide_root_folder = false,
     side = "left",
+    -- auto_resize = true,
     mappings = {
       custom_only = false,
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
-        { key = "s", cb = tree_cb "split" },
       },
     },
     number = true,
     relativenumber = true,
   },
-  trash = {
-    cmd = "trash",
-    require_confirm = true,
-  },
-  actions = {
-    open_file = {
-      quit_on_open = false,
-      window_picker = {
-            enable = false,
-      },
-    },
-    expand_all = {
-      max_folder_discovery = 300,
-    },
-  },
-
---  unknown options as of 22.05
---
---  update_to_buf_dir = {
---    enable = true,
---    auto_open = true,
---  },
---  auto_resize = true,
---  git_hl = 1,
--- root_folder_modifier = ":t",
-
 }
-
