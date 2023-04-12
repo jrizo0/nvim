@@ -1,8 +1,8 @@
 M = {}
 local status_ok, _ = pcall(require, "lspconfig")
--- if not status_ok then
---   return
--- end
+if not status_ok then
+  return
+end
 
 M.server_capabilities = function()
   local active_clients = vim.lsp.get_active_clients()
@@ -31,9 +31,9 @@ require("user.lsp.handlers").setup()
 require "user.lsp.null-ls"
 
 local l_status_ok, lsp_lines = pcall(require, "lsp_lines")
--- if not l_status_ok then
---   return
--- end
+if not l_status_ok then
+  return
+end
 
 lsp_lines.setup()
 

@@ -42,24 +42,26 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "folke/todo-comments.nvim"
   use "ThePrimeagen/vim-be-good"
+
+   -- Lua Development
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim"
+  use "christianchiarulli/lua-dev.nvim"
+  -- use "folke/lua-dev.nvim"
 
   -- Colorschemes
   use "sainnhe/gruvbox-material"
@@ -74,6 +76,14 @@ return packer.startup(function(use)
   -- use "sainnhe/edge"
   -- use "rafamadriz/neon"
   -- use "NTBBloodbath/doom-one.nvim"
+
+   -- Utility
+  use "rcarriga/nvim-notify"
+  use "stevearc/dressing.nvim"
+  use "ghillb/cybu.nvim"
+  use "moll/vim-bbye"
+  use "lewis6991/impatient.nvim"
+  use "lalitmee/browse.nvim"
 
   -- Debugging
   use "mfussenegger/nvim-dap"
@@ -124,14 +134,26 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
 
+    -- Marks
+  use "christianchiarulli/harpoon"
+  use "MattesGroeger/vim-bookmarks"
+
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+  use "nvim-treesitter/nvim-treesitter"
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "windwp/nvim-ts-autotag"
   use "romgrk/nvim-treesitter-context"
+
+  -- Code Runner
+  use "is0n/jaq-nvim"
+  use {
+    "0x100101/lab.nvim",
+    run = "cd js && npm ci",
+  }
+
+   -- Motion
+  use "phaazon/hop.nvim"
+  -- use "jinh0/eyeliner.nvim"
 
   -- Git
   use "lewis6991/gitsigns.nvim"

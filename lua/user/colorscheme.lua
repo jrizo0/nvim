@@ -28,7 +28,11 @@ vim.g.tokyonight_transparent_sidebar = true
 
 
 -- catppuccin CONFIG
-require("catppuccin").setup({
+local catppuccin_status_ok, catppuccin = pcall(require, "catppuccin")
+if not catppuccin_status_ok then
+  return
+end
+catppuccin.setup({
   flavour = "macchiato", -- latte, frappe, macchiato, mocha
   background = { -- :h background
     light = "latte",
@@ -73,7 +77,11 @@ require("catppuccin").setup({
 
 
 -- GITHUB THEME CONFIG
-require("github-theme").setup({
+local githubtheme_status_ok, githubtheme = pcall(require, "github-theme")
+if not githubtheme_status_ok then
+  return
+end
+githubtheme.setup({
   -- theme_style = "light_default",
   function_style = "italic",
   sidebars = { "qf", "vista_kind", "terminal", "packer" },

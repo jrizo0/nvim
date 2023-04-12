@@ -21,6 +21,19 @@ vim.g.maplocalleader = " "
 ---------------------------------------------------------------------
 -- JRIZO ------------------------------------------------------------
 ---------------------------------------------------------------------
+vim.api.nvim_set_keymap(
+  "n",
+  "<tab>",
+  "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
+  opts
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<s-tab>",
+  "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
+  opts
+)
+
 --lsp_lines
 keymap("n", "<A-v>", "<cmd>lua require('lsp_lines').toggle()<cr>", opts)
 
