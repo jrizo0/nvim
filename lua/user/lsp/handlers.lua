@@ -81,11 +81,11 @@ end
 
 
 local function attach_navic(client, bufnr)
-  vim.g.navic_silence = true
-  local status_ok, navic = pcall(require, "nvim-navic")
-  -- if not status_ok then
-  --   return
-  -- end
+  vim.g.navic_silence = false
+  local status_ok_navic, navic = pcall(require, "nvim-navic")
+  if not status_ok_navic then
+    return
+  end
   navic.attach(client, bufnr)
 end
 
@@ -116,7 +116,10 @@ end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-  attach_navic(client, bufnr)
+
+  if client.server_capabilities.documentSymbolProvider then
+    attach_navic(client, bufnr)
+  end
 
   if client.name == "tsserver" then
     require("lsp-inlayhints").on_attach(client, bufnr)
