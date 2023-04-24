@@ -5,7 +5,8 @@ end
 
 noice.setup({
   notify = {
-    enabled = true
+    enabled = true,
+    view = "notify",
   },
   lsp = {
     signature = {

@@ -91,6 +91,7 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
+  -- vim.cmd [[ command! Eslint execute 'npx eslint-config-prettier expand(expand("%:p"))' ]]
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)

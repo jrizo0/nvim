@@ -79,6 +79,7 @@ local opts = {
 }
 
 local mappings = {
+  ["h"] = {"<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>", "Harpoon marks"},
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -89,7 +90,7 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["Q"] = { "<cmd>qa<CR>", "Quit" },
   -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+  -- ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
@@ -231,7 +232,7 @@ local m_mappings = {
   a = { "<cmd>silent BookmarkAnnotate<cr>", "Annotate" },
   c = { "<cmd>silent BookmarkClear<cr>", "Clear" },
   b = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
-  m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+  m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon Mark" },
   ["."] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
   [","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
   -- l = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },

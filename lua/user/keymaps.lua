@@ -21,12 +21,13 @@ vim.g.maplocalleader = " "
 ---------------------------------------------------------------------
 -- JRIZO ------------------------------------------------------------
 ---------------------------------------------------------------------
-vim.api.nvim_set_keymap(
-  "n",
-  "<tab>",
-  "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
-  opts
-)
+-- c-i is same as tab :c
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<TAB>",
+--   "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
+--   opts
+-- )
 vim.api.nvim_set_keymap(
   "n",
   "<s-tab>",

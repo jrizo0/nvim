@@ -108,6 +108,7 @@ return packer.startup(function(use)
     run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   }
   use 'mfussenegger/nvim-dap-python'
+  use 'ldelossa/nvim-dap-projects'
   -- use "theHamsta/nvim-dap-virtual-text"
   -- use "Pocco81/DAPInstall.nvim"
 
@@ -174,6 +175,8 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   --[[ use "github/copilot.vim" ]]
+  use "Exafunction/codeium.vim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

@@ -8,6 +8,13 @@ if not dap_ui_status_ok then
   return
 end
 
+local dap_projects_status_ok, dap_projects = pcall(require, "nvim-dap-projects")
+if not dap_projects_status_ok then
+  return
+end
+-- dap_projects.config_paths = {"./test/nvim-dap.lua"} -- new paths to find lua file config
+dap_projects.search_project_config()
+
 require("user.dap.javascript")
 require("user.dap.python")
 
@@ -112,3 +119,5 @@ dap.adapters.chrome = {
   command = "node",
   args = { vim.fn.stdpath("data") .. "/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js" },
 }
+
+

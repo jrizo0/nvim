@@ -23,7 +23,8 @@ require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 require "user.illuminate"
-require "user.copilot"
+-- require "user.copilot"
+-- require "user.codeium"
 require "user.todo-comments"
 require "user.trouble"
 require "user.fidget"
@@ -32,7 +33,7 @@ require "user.dap"
 require "user.ts-context"
 require "user.dressing" -- ui for some actions
 require "user.cybu" -- cycle buffers with ui
--- require "user.notify"
+require "user.notify"
 require "user.jaq" -- not working
 require "user.lab" -- not working
 require "user.nvim-webdev-icons"
@@ -46,6 +47,3 @@ reload "user.lualine"
 
 -- TODO:
 -- require "user.browse"
-
--- TODO:
--- lazyvim

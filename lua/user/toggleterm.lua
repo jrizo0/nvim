@@ -15,7 +15,7 @@ toggleterm.setup({
 	persist_size = true,
 	direction = "float",
 	close_on_exit = true,
-	shell = "pwsh",
+	shell = vim.o.shell,
 	float_opts = {
 		border = "curved",
 		winblend = 0,
@@ -25,6 +25,12 @@ toggleterm.setup({
 		},
 	},
 })
+
+if vim.fn.has "windows" == 1 then
+  toggleterm.setup({
+    shell = "pwsh",
+  })
+end
 
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
