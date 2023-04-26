@@ -175,7 +175,8 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   --[[ use "github/copilot.vim" ]]
-  use "Exafunction/codeium.vim"
+  -- use "Exafunction/codeium.vim"
+  -- use { "codota/tabnine-nvim", run = "pwsh.exe -file .\\dl_binaries.ps1" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
