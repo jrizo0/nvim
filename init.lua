@@ -1,10 +1,10 @@
 require "user.hot-reload"
 require "user.options"
 require "user.keymaps"
-require "user.colorscheme"
 
 require "user.plugins"
 
+-- require "user.colorscheme"
 require "user.cmp"
 require "user.lsp-inlayhints"
 require "user.lsp"
@@ -13,12 +13,12 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
-require "user.nvim-tree"
-require "user.bufferline"
+-- require "user.nvim-tree"
+-- require "user.bufferline"
 require "user.toggleterm"
 require "user.project"
 require "user.impatient"
-require "user.indentline"
+-- require "user.indentline"
 require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
@@ -30,7 +30,7 @@ require "user.todo-comments"
 require "user.trouble"
 require "user.fidget"
 require "user.symbol-outline"
-require "user.dap"
+require "user.dap" -- TODO:
 require "user.ts-context"
 require "user.dressing" -- ui for some actions
 require "user.cybu" -- cycle buffers with ui
@@ -44,7 +44,6 @@ require "user.harpoon"
 require "user.noice"
 require "user.navic"
 reload "user.lualine"
-
 
 -- TODO:
 -- require "user.browse"

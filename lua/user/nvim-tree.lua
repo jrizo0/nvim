@@ -35,7 +35,7 @@ local function open_nvim_tree(data)
     vim.cmd.cd(data.file)
   end
   -- open the tree
-  require("nvim-tree.api").tree.open()
+  -- require("nvim-tree.api").tree.open()
 end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 -- utils.notify.warn = notify_level(vim.log.levels.WARN)

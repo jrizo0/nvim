@@ -21,6 +21,22 @@ vim.g.maplocalleader = " "
 ---------------------------------------------------------------------
 -- JRIZO ------------------------------------------------------------
 ---------------------------------------------------------------------
+-- better up/down
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- Clear search with <esc>
+keymap("i", "<esc>", "<cmd>noh<cr><esc>", opts)
+keymap("n", "<esc>", "<cmd>noh<cr><esc>", opts)
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+keymap("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+keymap("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+keymap("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+
+
+
 -- c-i is same as tab :c
 -- vim.api.nvim_set_keymap(
 --   "n",
@@ -69,7 +85,7 @@ keymap("n", "tn", ":tabnew<CR>", opts)
 
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprev<CR>", opts)
-keymap("n", "<A-->", "<cmd>Bdelete!<CR>", opts)
+-- keymap("n", "<A-->", "<cmd>Bdelete!<CR>", opts)
 
 --  TELESCOPE
 keymap(
@@ -134,3 +150,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+
+keymap("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", opts)
+keymap("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", opts)
+keymap("n", "[b", "<cmd>BufferLineCyclePrev<cr>", opts)
+keymap("n", "]b", "<cmd>BufferLineCycleNext<cr>", opts)

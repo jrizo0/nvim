@@ -1,0 +1,58 @@
+return {
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    opts = { style = "moon" },
+    config = function()
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
+  -- {
+  --   "catppuccin/nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   name = "catppuccin",
+  --   opts = {
+  --     flavour = "macchiato", -- latte, frappe, macchiato, mocha
+  --     background = {
+  --       light = "latte",
+  --       dark = "mocha",
+  --     },
+  --     -- transparent_background = true,
+  --   },
+  --   config = function()
+  --     vim.cmd([[colorscheme catppuccin]])
+  --   end,
+  -- },
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   config = function()
+  --     vim.g.gruvbox_material_foreground = 'grey'
+  --     vim.g.gruvbox_material_better_performance = 1
+  --     vim.g.gruvbox_material_enable_bold = 1
+  --     vim.g.gruvbox_material_enable_italic = 0
+  --     vim.g.gruvbox_material_transparent_background = 0
+  --     vim.g.gruvbox_material_visual = 'grey background'
+  --     vim.g.gruvbox_material_background = 'soft'
+  --     vim.g.gruvbox_material_current_word = 'grey background'
+  --     vim.g.gruvbox_material_menu_selection_background = 'aqua'
+  --     vim.g.gruvbox_material_ui_contrast = 'high'
+  --     vim.g.gruvbox_material_diagnostic_text_highlight = 0
+  --     vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
+  --     vim.g.gruvbox_material_diagnostic_line_highlight = 0 -- not working
+  --   end
+  -- },
+  {
+    'folke/lsp-colors.nvim',
+    opts =
+    {
+      Error = "#db4b4b",
+      Warning = "#e0af68",
+      Information = "#0db9d7",
+      Hint = "#10B981"
+    }
+  },
+  -- { 'projekt0n/github-nvim-theme', version = 'v0.0.7' },
+  -- 'lunarvim/darkplus.nvim',
+}
