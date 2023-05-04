@@ -30,7 +30,7 @@ require "user.todo-comments"
 require "user.trouble"
 require "user.fidget"
 require "user.symbol-outline"
-require "user.dap" -- TODO:
+-- require "user.dap" -- TODO:
 require "user.ts-context"
 require "user.dressing" -- ui for some actions
 require "user.cybu" -- cycle buffers with ui
