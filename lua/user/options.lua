@@ -50,6 +50,10 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
+vim.cmd [[
+  let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+]]
+
 
 if vim.fn.has "windows" == 1 then
   vim.cmd [[
