@@ -7,7 +7,7 @@ return {
       -- stylua: ignore
       keys = {
         { "<leader>daL", function() require("osv").launch({ port = 8086 }) end, desc = "Adapter Lua Server" },
-        { "<leader>dal", function() require("osv").run_this() end, desc = "Adapter Lua" },
+        { "<leader>dal", function() require("osv").run_this() end,              desc = "Adapter Lua" },
       },
       config = function()
         local dap = require("dap")
@@ -25,4 +25,3 @@ return {
     },
   },
 }
-

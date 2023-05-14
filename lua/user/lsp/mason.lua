@@ -22,6 +22,7 @@ local servers = {
   "clangd",
   "jdtls",
   "eslint",
+  "astro",
 }
 
 local settings = {
