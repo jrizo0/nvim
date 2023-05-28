@@ -23,6 +23,7 @@ local servers = {
   "jdtls",
   "eslint",
   "astro",
+  "marksman",
 }
 
 local settings = {
