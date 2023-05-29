@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
         "vim",
-        "buildStr"
+        "buildStr",
+        "toggle_format_on_save"
     ]
 }
