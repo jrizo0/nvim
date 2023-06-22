@@ -13,5 +13,5 @@
 
 return {
   'yardnsm/vim-import-cost',
-  build = 'pnpm install'
+  build = 'npm install'
 }

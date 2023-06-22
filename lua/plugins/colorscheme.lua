@@ -9,7 +9,7 @@ return {
         style = "moon",
         transparent = true,
       })
-      -- vim.cmd([[colorscheme tokyonight]])
+      -- vim.cmd('colorscheme tokyonight')
     end,
   },
 
@@ -26,7 +26,7 @@ return {
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
       end
 
-      ColorMyPencils()
+      -- ColorMyPencils()
     end
   },
   -- {

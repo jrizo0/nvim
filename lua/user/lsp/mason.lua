@@ -24,6 +24,7 @@ local servers = {
   "eslint",
   "astro",
   "marksman",
+  "tailwindcss",
 }
 
 local settings = {

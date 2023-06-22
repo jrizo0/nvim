@@ -33,7 +33,7 @@ require "user.symbol-outline"
 -- require "user.dap" -- TODO:
 require "user.ts-context"
 require "user.dressing" -- ui for some actions
-require "user.cybu" -- cycle buffers with ui
+-- require "user.cybu" -- cycle buffers with ui
 require "user.notify"
 require "user.nvim-webdev-icons"
 require "user.hop"

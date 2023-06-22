@@ -26,7 +26,7 @@ hints.setup {
     },
     type_hints = {
       -- type and other hints
-      show = true,
+      show = false,
       prefix = "",
       separator = ", ",
       remove_colon_end = false,

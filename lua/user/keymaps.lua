@@ -21,6 +21,9 @@ vim.g.maplocalleader = " "
 ---------------------------------------------------------------------
 -- JRIZO ------------------------------------------------------------
 ---------------------------------------------------------------------
+-- not move when * pressed
+keymap("n", "*", "'*N'", { expr = true, silent = true })
+
 -- better up/down
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
