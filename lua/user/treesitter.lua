@@ -20,7 +20,7 @@ configs.setup {
     "markdown",
     "tsx",
   },
-  sync_install = false,    -- install languages synchronously (only applied to `ensure_installed`)
+  sync_install = true,    -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
     enable = true,
@@ -40,7 +40,7 @@ configs.setup {
     disable = { "xml", "markdown" },
   },
   rainbow = {
-    enable = true,
+    enable = false,
     extended_mode = false,
     colors = {
       -- "#68a0b0",

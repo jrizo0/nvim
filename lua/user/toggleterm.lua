@@ -26,11 +26,11 @@ toggleterm.setup({
 	},
 })
 
-if vim.fn.has "windows" == 1 then
-  toggleterm.setup({
-    shell = "pwsh",
-  })
-end
+-- if vim.fn.has "windows" == 1 then
+--   toggleterm.setup({
+--     shell = "pwsh",
+--   })
+-- end
 
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}

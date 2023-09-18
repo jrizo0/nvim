@@ -25,6 +25,7 @@ local servers = {
   "astro",
   "marksman",
   "tailwindcss",
+  "yamlls",
 }
 
 local settings = {

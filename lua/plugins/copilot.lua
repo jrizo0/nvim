@@ -1,6 +1,6 @@
+-- return {}
 return {
   {
-    -- 'github/copilot.vim',
     'zbirenbaum/copilot.lua',
     config = function()
       local ok, copilot = pcall(require, "copilot")
